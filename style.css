@@ -1,0 +1,296 @@
+:root {
+  --bg-color: #050811;
+  --card-bg: #0d1322;
+  --cyan-neon: #00f0ff;
+  --pink-neon: #ff0055;
+  --green-neon: #39ff14;
+  --text-main: #e2e8f0;
+  --text-muted: #8b9bb4;
+  --font-title: 'Orbitron', sans-serif;
+  --font-body: 'Rajdhani', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-image: 
+    linear-gradient(rgba(0, 240, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 240, 255, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+}
+
+header {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+  border-bottom: 2px solid var(--cyan-neon);
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.2);
+  position: relative;
+}
+
+.cyber-badge {
+  display: inline-block;
+  font-family: var(--font-title);
+  font-size: 0.75rem;
+  color: var(--pink-neon);
+  border: 1px solid var(--pink-neon);
+  padding: 2px 10px;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+header h1 {
+  font-family: var(--font-title);
+  font-size: 2.8rem;
+  color: #fff;
+  text-shadow: 0 0 10px var(--cyan-neon), 0 0 20px var(--cyan-neon);
+  letter-spacing: 3px;
+}
+
+header h1 span {
+  color: var(--pink-neon);
+}
+
+.descricao {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+}
+
+main {
+  max-width: 1100px;
+  margin: 2.5rem auto;
+  padding: 0 1.5rem;
+  flex: 1;
+}
+
+.instrucoes {
+  background-color: var(--card-bg);
+  padding: 2rem;
+  border: 1px solid var(--cyan-neon);
+  box-shadow: inset 0 0 15px rgba(0, 240, 255, 0.1);
+  text-align: center;
+  margin-bottom: 3rem;
+  clip-path: polygon(0 0, 97% 0, 100% 15%, 100% 100%, 3% 100%, 0 85%);
+}
+
+.instrucoes h2 {
+  font-family: var(--font-title);
+  color: var(--cyan-neon);
+  margin-bottom: 0.8rem;
+}
+
+.instrucoes p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.btn-cyber {
+  background: transparent;
+  color: var(--cyan-neon);
+  border: 2px solid var(--cyan-neon);
+  font-family: var(--font-title);
+  padding: 0.9rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 2px;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.btn-cyber:hover {
+  background-color: var(--cyan-neon);
+  color: #000;
+  box-shadow: 0 0 25px var(--cyan-neon);
+  transform: translateY(-2px);
+}
+
+.produtos h2 {
+  font-family: var(--font-title);
+  color: var(--pink-neon);
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px var(--pink-neon);
+}
+
+.grid-produtos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* CARDS CYBERPUNK COM ANIMAÇÃO DE ROTAÇÃO 3D */
+.card-produto {
+  background-color: var(--card-bg);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  perspective: 1000px; /* Ativa profundidade 3D */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.card-produto:hover {
+  border-color: var(--cyan-neon);
+  box-shadow: 0 0 25px rgba(0, 240, 255, 0.25);
+  transform: translateY(-8px);
+}
+
+/* Moldura e efeito na imagem */
+.moldura-imagem {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255, 0, 85, 0.5);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagem-produto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+  /* Animação suave padrão de flutuação */
+  animation: float 4s ease-in-out infinite;
+  transition: transform 0.8s ease-in-out, filter 0.4s ease;
+}
+
+/* ANIMAÇÃO INOVADORA: Rotação 3D ao passar o mouse */
+.card-produto:hover .imagem-produto {
+  animation: none; /* Interrompe a flutuação ao passar o mouse */
+  transform: rotateY(360deg) scale(1.05); /* Rotação completa de 360 graus */
+  filter: drop-shadow(0 0 12px var(--cyan-neon));
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.card-produto h3 {
+  font-family: var(--font-title);
+  color: var(--cyan-neon);
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+}
+
+.card-produto .detalhes {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 1.2rem;
+}
+
+.card-produto .preco {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--green-neon);
+  text-shadow: 0 0 8px rgba(57, 255, 20, 0.4);
+}
+
+footer {
+  background-color: #03050a;
+  text-align: center;
+  padding: 1.5rem;
+  border-top: 1px solid rgba(0, 240, 255, 0.2);
+  margin-top: 3rem;
+  font-family: var(--font-title);
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+footer .autor {
+  color: var(--pink-neon);
+}
+/* --- ESTILOS DO POPUP (LIGHTBOX) CYBERPUNK --- */
+
+.zoomable {
+  cursor: zoom-in; /* Cursor indicando que a imagem pode ser ampliada */
+}
+
+.modal-cyber {
+  display: none; /* Escondido por padrão */
+  position: fixed;
+  z-index: 1000;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 8, 17, 0.92); /* Fundo escuro levemente transparente */
+  backdrop-filter: blur(8px); /* Efeito de vidro fosco no fundo */
+  text-align: center;
+}
+
+.modal-conteudo {
+  margin: auto;
+  display: block;
+  max-width: 85%;
+  max-height: 75vh;
+  border: 2px solid var(--cyan-neon);
+  box-shadow: 0 0 35px var(--cyan-neon);
+  border-radius: 6px;
+  animation: zoomIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-caption {
+  margin-top: 15px;
+  color: var(--pink-neon);
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px var(--pink-neon);
+}
+
+.modal-fechar {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: var(--pink-neon);
+  font-size: 40px;
+  font-weight: bold;
+  font-family: var(--font-title);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modal-fechar:hover {
+  color: var(--cyan-neon);
+  text-shadow: 0 0 15px var(--cyan-neon);
+  transform: scale(1.2);
+}
+
+/* Animação de entrada da imagem */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

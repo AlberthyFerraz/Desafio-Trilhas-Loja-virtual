@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hosi-Moshi // Store</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="icon" type="image/png" href="assets/Shop-256.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <div class="cyber-badge">TRILHAS 3.0</div>
+    <h1>HOSHI-MOSHI<span>//</span>STORE</h1>
+    <p class="descricao">Acessórios & Periféricos de Alta Performance para o Ciberespaço.</p>
+  </header>
+
+  <main>
+    <section class="instrucoes">
+      <h2>// SIMULADOR DE COMPRAS</h2>
+      <p>Inicialize a simulação de compra para definir as quantidades desejadas. Digite <strong>0</strong> caso não queira algum item.</p>
+      <button onclick="simularCompra()" class="btn-cyber">INICIAR SIMULAÇÃO</button>
+    </section>
+
+    <section class="produtos">
+      <h2>// CATÁLOGO DE EQUIPAMENTOS</h2>
+      <div class="grid-produtos">
+
+        <article class="card-produto">
+          <div class="moldura-imagem">
+            <img src="assets/teclado.webp" alt="Teclado Mecânico RGB" class="imagem-produto zoomable" onclick="abrirModal(this)">
+         </div>
+          <h3>Teclado Mecânico RGB</h3>
+          <p class="detalhes">Switches mecânicos táteis, chassi de alumínio industrial e iluminação RGB customizável.</p>
+          <p class="preco">R$ 250,00</p>
+        </article>
+
+        <article class="card-produto">
+          <div class="moldura-imagem">
+            <img src="assets/mouse.webp" alt="Mouse Ergonômico Sem Fio" class="imagem-produto zoomable" onclick="abrirModal(this)">
+          </div>
+          <h3>Mouse Ergonômico Sem Fio</h3>
+          <p class="detalhes">Sensor óptico de 26.000 DPI, conexões ultra-rápidas e design ergonômico futurista.</p>
+          <p class="preco">R$ 120,00</p>
+        </article>
+
+        <article class="card-produto">
+          <div class="moldura-imagem">
+            <img src="assets/suporte.webp" alt="Suporte Articulado para Monitor" class="imagem-produto zoomable" onclick="abrirModal(this)">
+          </div>
+          <h3>Suporte Articulado para Monitor</h3>
+          <p class="detalhes">Pistão a gás de alta precisão, rotação 360° e organizador de cabos integrado.</p>
+          <p class="preco">R$ 180,00</p>
+        </article>
+        <article class="card-produto">
+          <div class="moldura-imagem">
+            <img src="assets/headset.jpg" alt="Headset Gamer 7.1" class="imagem-produto zoomable" onclick="abrirModal(this)">
+          </div>
+          <h3>Headset Gamer 7.1</h3>
+          <p class="detalhes">Som surround 7.1 virtual, microfone com cancelamento de ruído e iluminação RGB.</p>
+          <p class="preco">R$ 200,00</p>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>DESENVOLVIDO POR <span class="autor">ALBERTHY FERRAZ</span> | TRILHAS 3</p>
+  </footer>
+<div id="modal-imagem" class="modal-cyber" onclick="fecharModal()">
+    <span class="modal-fechar">&times;</span>
+    <img id="imagem-expandida" class="modal-conteudo" alt="Imagem Expandida">
+    <div id="caption-modal" class="modal-caption"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
